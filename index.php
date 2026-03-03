@@ -1,10 +1,17 @@
-<!DOCTYPE html>
+<?php
+//declaraçao de atributo
+$imagem = "midias/img1.jpg";
+$titulo = "PC Gamer Completo Intel";
+$resumo = "PC Gamer Completo Intel Core i7 16GB SSD 512GB Monitor 19 Kit Gamer Strong Tech";
+$valor= 1900;
+$quantidade = 6;
+?>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O lojinha</title>
-    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
     <header>
@@ -52,7 +59,7 @@
             <img src="carrosel/caro2.webp" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="carrosel/caro3.webp" class="d-block w-100" alt="...">
+            <img src="carrosel/caro3.webp" class="d-block w-100" alt="...">  
           </div>
           <div class="carousel-item">
             <img src="carrosel/carro4.webp" class="d-block w-100" alt="...">
@@ -76,7 +83,19 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <div class="row">
+        <div class="col mt-2">
+        <div class="card" style="width: 18rem;">
+  <img src="<?php echo $imagem; ?>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><?php echo$titulo; ?></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+        </div>
+      </div>
 </main>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>   
+ <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>   
 </body>
 </html>   
