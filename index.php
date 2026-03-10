@@ -4,7 +4,8 @@ $imagem = "midias/img1.jpg";
 $titulo = "PC Gamer Completo Intel";
 $resumo = "PC Gamer Completo Intel Core i7 16GB SSD 512GB Monitor 19 Kit Gamer Strong Tech";
 $valor= 1900;
-$quantidade = 6;
+$quantidade = 100;
+$i = 1;
 ?>
 <html lang="pt-BR">
 <head>
@@ -84,16 +85,20 @@ $quantidade = 6;
         </button>
       </div>
       <div class="row">
+        <?php while ($i<=10){ ?>
         <div class="col mt-2">
         <div class="card" style="width: 18rem;">
   <img src="<?php echo $imagem; ?>" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><?php echo$titulo; ?></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <p class="card-text"><?php echo $resumo; ?></p>
+    <p class="text-danger">Valor:<b>R$ <?php echo $valor; ?></b></p>
+    <p class="text-primary">Estoque: <?php echo $quantidade; ?></p>
+    <a href="#" class="btn btn-primary">Ver Produto</a>
   </div>
 </div>
         </div>
+        <?php $i++; }//$i=$i+1?>
       </div>
 </main>
  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>   
