@@ -1,15 +1,10 @@
 <?php
-//mesma coisa que o uses do delphi ou lazarus (ALT+F11)
-require './controle/conexao.php';
 
-//semelhante ao connected do delphi (query)
-$pdo = conexao::conectar();
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql = "select * from categorias"; /*propriedde sql da query do delphi */ 
 $prp =$pdo->prepare($sql); /*Seria o principio logico de praparaçao para o execsql ou open da query do delphi */ 
 $prp->execute();  /*esecsql ou open da qquery no delphi*/ 
 ?>
-
+  
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">LogoDaLojinha</a>

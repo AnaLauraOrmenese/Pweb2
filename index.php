@@ -1,11 +1,40 @@
 <?php
-//declaraçao de atributo
-$imagem = "midias/img1.jpg";
-$titulo = "PC Gamer Completo Intel";
-$resumo = "PC Gamer Completo Intel Core i7 16GB SSD 512GB Monitor 19 Kit Gamer Strong Tech";
-$valor= 1900;
-$quantidade = 100;
-$i = 1;
+//mesma coisa que o uses do delphi ou lazarus (ALT+F11)
+require './controle/conexao.php';
+
+//semelhante ao connected do delphi (query)
+$pdo = conexao::conectar();
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sqlpro="
+select
+proid,
+pronome,
+prodescricao,
+provalorcusto,
+provalorvenda,
+proquantidade,
+prosubid,
+subnome,
+subcatid,
+catnome,
+proativo
+
+from 
+
+produtos,
+subcategorias,
+categorias
+where
+prosubid= subid
+and
+subcatid= catid
+"; 
+$prppro = $pdo->prepare($sqlpro);
+$prppro->execute();
+while($dspro = $prppro->fetch(PDO::FETCH_ASSOC)) {
+  echo $dspro['pronome'].'<br>';
+}
+
 ?>
 <html lang="pt-BR">
 <head>
@@ -17,7 +46,7 @@ $i = 1;
 <body>
     <header>
    <?php require('menu.php');//unit uses unit?>
-    </header>
+    </header>  
 <main class="container">
     <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
